@@ -1,0 +1,897 @@
+/* =========================================================
+   PURELIS ADMIN
+========================================================= */
+
+.admin-header {
+  width: min(calc(100% - 48px), var(--shell));
+  min-height: 82px;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+
+  font-size: 27px;
+  letter-spacing: -0.04em;
+}
+
+.admin-brand > span {
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+  color: white;
+
+  font-size: 15px;
+}
+
+.admin-brand small {
+  margin-left: 7px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+  letter-spacing: 0.08em;
+
+  color: var(--primary);
+}
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.view-shop {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+}
+
+.view-shop:hover {
+  color: var(--primary);
+}
+
+.admin-icon-btn {
+  border: 1px solid var(--border);
+
+  background: transparent;
+
+  padding: 9px 13px;
+
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+}
+
+.admin-icon-btn:hover {
+  background: var(--foreground);
+  color: var(--cream);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.admin-main {
+  width: min(calc(100% - 48px), var(--shell));
+
+  margin: auto;
+
+  padding: 75px 0 120px;
+}
+
+.admin-title {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+
+  margin-bottom: 55px;
+}
+
+.admin-title h1 {
+  margin: 0;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+
+  font-size: clamp(60px, 8vw, 105px);
+
+  line-height: .86;
+
+  font-weight: 500;
+
+  letter-spacing: -.055em;
+}
+
+.admin-title h1 em {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.admin-title p:not(.eyebrow) {
+  margin-top: 25px;
+
+  color: var(--muted);
+
+  max-width: 400px;
+}
+
+.eyebrow {
+  color: var(--primary);
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.admin-primary-btn {
+  border: 0;
+
+  background: var(--primary);
+  color: white;
+
+  padding: 13px 20px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  transition:
+    background .2s ease,
+    transform .2s ease;
+}
+
+.admin-primary-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin-bottom: 65px;
+}
+
+.stat-card {
+  padding: 25px;
+
+  background: var(--cream);
+
+  border: 1px solid var(--border);
+}
+
+.stat-label {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: var(--muted);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+  letter-spacing: .05em;
+}
+
+.stat-card strong {
+  font-family: "Bricolage Grotesque", sans-serif;
+
+  font-size: 43px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.admin-tabs {
+  display: flex;
+
+  gap: 25px;
+
+  border-bottom: 1px solid var(--border);
+
+  margin-bottom: 28px;
+}
+
+.admin-tab {
+  border: 0;
+
+  background: transparent;
+
+  padding: 12px 2px;
+
+  color: var(--muted);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  position: relative;
+}
+
+.admin-tab.active {
+  color: var(--foreground);
+}
+
+.admin-tab.active::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -1px;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: var(--primary);
+}
+
+
+/* =========================================================
+   PANELS
+========================================================= */
+
+.admin-panel {
+  display: none;
+}
+
+.admin-panel.active {
+  display: block;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.panel-toolbar {
+  display: flex;
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+.admin-search {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border-bottom: 1px solid var(--border);
+
+  padding: 8px 2px;
+}
+
+.admin-search span {
+  color: var(--muted);
+}
+
+.admin-search input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  font-size: 13px;
+}
+
+.panel-toolbar select {
+  border: 1px solid var(--border);
+
+  background: var(--cream);
+
+  padding: 9px 12px;
+
+  color: var(--foreground);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  outline: none;
+}
+
+
+/* =========================================================
+   PRODUCT ADMIN LIST
+========================================================= */
+
+.product-admin-list {
+  border-top: 1px solid var(--border);
+}
+
+.admin-product {
+  display: grid;
+
+  grid-template-columns: 90px 1fr auto;
+
+  gap: 22px;
+
+  align-items: center;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-product-image {
+  width: 90px;
+  height: 105px;
+
+  overflow: hidden;
+
+  background: #eee6d8;
+}
+
+.admin-product-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.admin-product-info {
+  min-width: 0;
+}
+
+.admin-product-name {
+  font-family: "Bricolage Grotesque", sans-serif;
+
+  font-size: 21px;
+
+  font-weight: 500;
+}
+
+.admin-product-description {
+  max-width: 500px;
+
+  margin: 6px 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+.admin-product-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 10px;
+}
+
+.admin-badge {
+  display: inline-flex;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  background: rgba(64, 37, 45, .07);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+}
+
+.admin-badge.low {
+  background: var(--primary);
+  color: white;
+}
+
+.admin-badge.hidden {
+  background: #ddd3cc;
+}
+
+.admin-product-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.product-action {
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid var(--border);
+
+  background: transparent;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 13px;
+}
+
+.product-action:hover {
+  background: var(--foreground);
+  color: white;
+}
+
+.product-action.delete:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.admin-empty {
+  text-align: center;
+
+  padding: 90px 20px;
+}
+
+.admin-empty > div {
+  width: 60px;
+  height: 60px;
+
+  margin: 0 auto 20px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--secondary);
+}
+
+.admin-empty h2 {
+  margin: 0;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+
+  font-size: 34px;
+
+  font-weight: 400;
+}
+
+.admin-empty p {
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   ORDERS
+========================================================= */
+
+.orders-list {
+  border-top: 1px solid var(--border);
+}
+
+.order-card {
+  padding: 25px 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.order-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.order-id {
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+}
+
+.order-date {
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+.order-customer {
+  margin-top: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.order-items {
+  margin-top: 12px;
+
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+.order-bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 20px;
+}
+
+.order-total {
+  font-family: "Bricolage Grotesque", sans-serif;
+
+  font-size: 23px;
+}
+
+.order-status {
+  border: 0;
+
+  padding: 8px 12px;
+
+  background: var(--accent);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  outline: none;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 20px;
+
+  background: rgba(64, 37, 45, .55);
+
+  backdrop-filter: blur(8px);
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.product-modal {
+  width: min(700px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: var(--background);
+
+  padding: 35px;
+}
+
+.modal-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: start;
+
+  margin-bottom: 35px;
+}
+
+.modal-header h2 {
+  margin: 0;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+
+  font-size: 38px;
+
+  font-weight: 500;
+}
+
+.modal-close {
+  border: 0;
+
+  background: transparent;
+
+  font-size: 30px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 22px;
+}
+
+.form-field {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.form-field.full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  margin-bottom: 7px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+
+  border: 1px solid var(--border);
+
+  background: var(--cream);
+
+  padding: 12px;
+
+  outline: none;
+
+  color: var(--foreground);
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--primary);
+}
+
+.form-field small {
+  margin-top: 6px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+}
+
+.form-options {
+  display: flex;
+
+  gap: 25px;
+
+  margin-top: 25px;
+}
+
+.check-option {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 12px;
+}
+
+.check-option input {
+  accent-color: var(--primary);
+}
+
+.modal-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 35px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid var(--border);
+}
+
+.cancel-btn {
+  border: 1px solid var(--border);
+
+  background: transparent;
+
+  padding: 12px 20px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.admin-toast {
+  position: fixed;
+
+  bottom: 25px;
+  left: 50%;
+
+  z-index: 3000;
+
+  transform: translate(-50%, 20px);
+
+  padding: 12px 20px;
+
+  border-radius: 999px;
+
+  background: var(--foreground);
+
+  color: var(--cream);
+
+  font-size: 12px;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: .3s ease;
+}
+
+.admin-toast.show {
+  opacity: 1;
+
+  transform: translate(-50%, 0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .admin-header,
+  .admin-main {
+    width: min(calc(100% - 28px), var(--shell));
+  }
+
+  .admin-header {
+    min-height: 70px;
+  }
+
+  .admin-brand {
+    font-size: 23px;
+  }
+
+  .admin-brand > span {
+    width: 28px;
+    height: 28px;
+  }
+
+  .view-shop {
+    display: none;
+  }
+
+  .admin-main {
+    padding-top: 55px;
+  }
+
+  .admin-title {
+    align-items: start;
+
+    flex-direction: column;
+
+    gap: 30px;
+  }
+
+  .admin-title h1 {
+    font-size: 65px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 45px;
+  }
+
+  .stat-card {
+    padding: 18px;
+  }
+
+  .stat-card strong {
+    font-size: 35px;
+  }
+
+  .panel-toolbar {
+    flex-direction: column;
+  }
+
+  .panel-toolbar select {
+    width: 100%;
+  }
+
+  .admin-product {
+    grid-template-columns: 70px 1fr;
+
+    gap: 14px;
+  }
+
+  .admin-product-image {
+    width: 70px;
+    height: 85px;
+  }
+
+  .admin-product-actions {
+    grid-column: 2;
+
+    justify-content: flex-start;
+  }
+
+  .admin-product-name {
+    font-size: 17px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field.full {
+    grid-column: auto;
+  }
+
+  .product-modal {
+    padding: 25px;
+  }
+
+  .form-options {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+}
